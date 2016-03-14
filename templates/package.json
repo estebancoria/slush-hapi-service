@@ -1,0 +1,30 @@
+{
+  "name": "<%= npmName %>",
+  "version": "<%= appVersion %>",
+  "description": "<%= appDescription %>",
+  "author": {
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>"
+  },
+  "main": "./server",
+  "scripts": {
+    "start": "NODE_ENV=development ./server",
+    "test": "lab -t 100",
+    "test-cov-html": "lab -r html -o coverage.html"
+  },
+  "keywords": [
+    "hapijs"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-config-hapi": "^9.1.0",
+    "lab": "^10.1.0"
+  },
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "boom": "^2.8.0",
+    "confidence": "^1.1.0",
+    "hapi": "^13.0.0",
+    "vision": "^3.0.0",
+  }
+}
