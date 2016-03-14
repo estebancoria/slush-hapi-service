@@ -41,7 +41,7 @@ server.register( Plugins, function( err ){
 process.on(
     'uncaughtException',
     function ( err ) {
-        LOGGER.error( err.stack );
+        console.error( err.stack );
             process.exit( 1 );
     }
 );
