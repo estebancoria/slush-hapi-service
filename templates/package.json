@@ -6,9 +6,9 @@
     "name": "<%= authorName %>",
     "email": "<%= authorEmail %>"
   },
-  "main": "./server",
+  "main": "./server/index.js",
   "scripts": {
-    "start": "NODE_ENV=development ./server",
+    "start": "NODE_ENV=development ./server/index.js",
     "test": "lab -t 100",
     "test-cov-html": "lab -r html -o coverage.html"
   },
