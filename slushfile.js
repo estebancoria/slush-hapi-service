@@ -120,9 +120,10 @@ function get_app_info( done ){
     ];
 
    inquirer.prompt( prompts, function ( answers ) {
+        answers.git_app_prefix = answers.git_app_prefix || '';
         answers.appName = defaults.folder_name;
         answers.appNameSlug = _.slugify( answers.appName );
-        answers.npmName = ( defaults.git_app_prefix + answers.appName ).toLowerCase();
+        answers.npmName = ( answers.git_app_prefix + answers.appName ).toLowerCase();
         answers.serviceName = _.camelize( answers.appName );
         global_answers = answers;
         return done();
