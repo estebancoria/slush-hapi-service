@@ -1,0 +1,7 @@
+/node_modules/
+temp
+*.log
+.idea
+/templates/node_modules
+
+/test/
