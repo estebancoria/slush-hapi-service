@@ -4,10 +4,6 @@
  * Hapi config file
  */
 
-/**
- * require'd
- */
-
 const HapiConfig = {
     connection: {
         host: '0.0.0.0',
@@ -32,4 +28,5 @@ const HapiConfig = {
 /**
  * Module exports: Hapi config
  */
+
 module.exports = HapiConfig;
