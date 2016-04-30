@@ -6,7 +6,8 @@
 
 'use strict';
 
-var gulp = require( 'gulp' ),
+const pathJoin = require(  'path' ).join,
+    gulp = require( 'gulp' ),
     install = require( 'gulp-install' ),
     conflict = require( 'gulp-conflict' ),
     template = require( 'gulp-template' ),
@@ -76,7 +77,7 @@ var defaults = ( function () {
 } )();
 
 
-var global_answers = {};
+const global_answers = {};
 
 function get_app_info( done ){
     var prompts = [
@@ -111,7 +112,7 @@ function get_app_info( done ){
             when: function( answers ){
                 return answers.prefix_ok;
             }
-        }, 
+        },
         {
             type: 'confirm',
             name: 'moveon',
@@ -132,29 +133,28 @@ function get_app_info( done ){
 
 
 function scaffolding_task( done ){
-    if( !check_folder_name( global_answers )){
+    if ( !check_folder_name( global_answers ) ){
         report_fail( global_answers );
         process.exit(0);
     }
 
-    report( global_answers );
-    var prompts = [
+    const prompts = [
         {
             type: 'confirm',
             name: 'moveon',
             message: 'Continue?'
-        }  
+        }
     ];
 
     inquirer.prompt( prompts, function ( answers ) {
         if ( !answers.moveon ) {
             return done();
         }
-        var templates_glob = '/templates/**';
+        const templates_glob = '/templates/**';
 
-        var installPipe = install();
+        const srcPath = pathJoin(__dirname, templates_glob)
 
-        gulp.src( __dirname + templates_glob )
+        gulp.src( srcPath )
             .pipe( template( global_answers ) )
             .pipe( rename( function ( file ) {
                 if ( file.basename[ 0 ] === '_' ) {
@@ -163,15 +163,19 @@ function scaffolding_task( done ){
             } ) )
             .pipe( conflict( './' ) )
             .pipe( gulp.dest( './' ) )
-            .pipe( installPipe );
-        
-        installPipe.on( 'finish', function(e){
-            if(e){
-                gutil.log( gutil.colors.red.bold.underline( 'Oops! Something went wrong: ', e ), '\n' );
-            }
-            report( global_answers );
-            gutil.log( gutil.colors.white.bold.bgGreen( 'Scaffolding done. Have a nice day. ' ) );
-        });
+            .pipe( install() )
+            .on( 'error', function(e){
+                process._rawDebug( 'FATAL:',e );
+            } )
+            .on( 'end', function( e ){
+                if ( e ) {
+                    gutil.log( gutil.colors.red.bold.underline( 'Oops! Something went wrong: ', e ), '\n' );
+                }
+                report( global_answers );
+                gutil.log( gutil.colors.white.bold.bgGreen( 'Scaffolding done. Have a nice day. ' ) );
+                done();
+            })
+            .resume();
     } );
 }
 
