@@ -1,7 +1,7 @@
 {
   "name": "slush-hapi-service",
   "version": "1.0.0",
-  "description": "Slush generator for creating the foundation of a HapiJS service/webapp.",
+  "description": "Slush generator for creating the foundation of a HapiJS (micro) service/webapp.",
   "main": "slushfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,11 +19,11 @@
     "gulp-filter": "^4.0.0",
     "gulp-install": "^0.6.0",
     "gulp-rename": "^1.2.2",
-    "gulp-template": "^3.0.0",
+    "gulp-template": "^3.1.0",
+    "gulp-util": "^3.0.7",
     "iniparser": "^1.0.5",
     "inquirer": "^0.12.0",
-    "underscore.string": "^3.3.4",
-    "gulp-util": "^3.0.7"
+    "underscore.string": "^3.3.4"
   },
   "author": "GEUT <diego@geut.com>",
   "license": "ISC"
