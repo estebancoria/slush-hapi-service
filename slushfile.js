@@ -10,7 +10,7 @@ const pathJoin = require(  'path' ).join,
     gulp = require( 'gulp' ),
     install = require( 'gulp-install' ),
     conflict = require( 'gulp-conflict' ),
-    template = require( 'gulp-template' ),
+    template = require( 'gulp-nunjucks' ),
     rename = require( 'gulp-rename' ),
     gulpFilter = require( 'gulp-filter' ),
     _ = require( 'underscore.string' ),
@@ -77,7 +77,7 @@ var defaults = ( function () {
 } )();
 
 
-const global_answers = {};
+var global_answers = {};
 
 function get_app_info( done ){
     var prompts = [
@@ -155,7 +155,7 @@ function scaffolding_task( done ){
         const srcPath = pathJoin(__dirname, templates_glob)
 
         gulp.src( srcPath )
-            .pipe( template( global_answers ) )
+            .pipe( template.compile( global_answers ) )
             .pipe( rename( function ( file ) {
                 if ( file.basename[ 0 ] === '_' ) {
                     file.basename = '.' + file.basename.slice( 1 );
