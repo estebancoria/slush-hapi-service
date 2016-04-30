@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * <%= serviceName %> Confidence
+ * {{ serviceName }} Confidence
  */
 
 const Confidence = require( 'confidence' );
@@ -17,6 +17,6 @@ Config.load( GeneralConfig );
 // Exports the config object based on the NODE_ENV and (optional) key
 
 exports.get = function ( key ) {
-    key = '/' + key || '/';
+    key = ('/' + key) || '/';
     return Config.get( key, criteria );
 };

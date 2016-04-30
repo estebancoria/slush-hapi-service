@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * <%= serviceName %> routes
+ * {{ serviceName }} routes
  */
 
 const Demo = require( './demo' );

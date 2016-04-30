@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * <%= serviceName %> plugins
+ * {{ serviceName }} plugins
  */
 
 let PLUGINS = [];
@@ -14,8 +14,8 @@ PLUGINS = PLUGINS
     .concat({
         register: require( 'blipp' ),
         options: {}
-    });   
-  
+    });
+
 
 /**
  * Exports: PLUGINS

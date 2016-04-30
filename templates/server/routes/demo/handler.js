@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * <%= serviceName %> demo route
+ * {{ serviceName }} demo route
  */
 
 exports.demo = function demo ( request, reply ){

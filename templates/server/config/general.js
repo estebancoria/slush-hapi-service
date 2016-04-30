@@ -1,10 +1,10 @@
 'use strict';
 
 /**
- * <%= serviceName %> general config
+ * {{ serviceName }} general config
  */
 
-// require all your config folders. 
+// require all your config folders.
 const DemoConfig = require( './demo_config' );
 
 // populate config object

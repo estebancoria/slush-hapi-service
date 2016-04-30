@@ -1,8 +1,12 @@
-var Code = require( 'code' );   // assertion library
-var Lab = require( 'lab' );
-var lab = exports.lab = Lab.script();
+/**
+ * {{ serviceName }} tests
+ */
 
-var server = require( '../' ); // require ../index.js
+const Code = require( 'code' );   // assertion library
+const Lab = require( 'lab' );
+const lab = exports.lab = Lab.script();
+
+const server = require( '../' ); // require ../index.js
 
 lab.experiment('Basic HTTP Test', function() {
     // tests

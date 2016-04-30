@@ -14,7 +14,9 @@ const HapiConfig = {
         layout: true,
         path: '/server/views',
         layoutPath: '/server/views',
-        isCached: ( process.env.NODE_ENV === 'development' ) ? false : true
+        engines: {
+            html: require( 'handlebars' ) 
+        }
     },
     application: {
         connections: {

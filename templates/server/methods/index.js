@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * <%= serviceName %> methods
+ * {{ serviceName }} methods
  */
 
 let METHODS = [];
@@ -16,5 +16,5 @@ METHODS = METHODS
         }
     } )
     */
-   
+
 module.exports = METHODS;
