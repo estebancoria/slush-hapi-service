@@ -52,9 +52,9 @@ The generated project contains:
 ├── routes
 │   ├── demo
 │   └── index.js
+└── views
 ├── test
 │   └── index.js
-└── views
 
 ```
 
