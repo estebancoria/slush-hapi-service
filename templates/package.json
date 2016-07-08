@@ -18,7 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "eslint-config-hapi": "^9.1.0",
-    "lab": "^10.1.0"
+    "lab": "^10.1.0",
+    "code": "^3.0.1"
   },
   "dependencies": {
     "blipp": "^2.3.0",
