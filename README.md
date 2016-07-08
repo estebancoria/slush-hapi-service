@@ -52,7 +52,7 @@ The generated project contains:
 ├── routes
 │   ├── demo
 │   └── index.js
-└── views
+├── views
 ├── test
 │   └── index.js
 
