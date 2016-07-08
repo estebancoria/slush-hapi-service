@@ -47,3 +47,5 @@ server.register( Plugins, ( err ) => {
 //         process.exit( 1 );
 //     }
 // );
+
+module.exports = server;
