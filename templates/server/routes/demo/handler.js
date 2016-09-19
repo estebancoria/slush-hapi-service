@@ -5,5 +5,5 @@
  */
 
 exports.demo = function demo ( request, reply ){
-    reply( 'demo!' );
+    reply( 'demo route!' );
 }

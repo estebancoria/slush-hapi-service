@@ -13,28 +13,33 @@ const Routes = require( './routes' );
 const Methods = require( './methods' );
 const Plugins = require( './plugins' );
 
-const server = new Hapi.Server( HapiConfig.application );
+const Service = new Hapi.Server( HapiConfig.application );
 
-server.connection( HapiConfig.connection );
+Service.connection( HapiConfig.connection );
 
-server.register( Plugins, ( err ) => {
+Service.register( Plugins, ( err ) => {
 
     // if (err) {
     //     throw err;
     // };
 
+    // Note: If your service deals with views you will need to install `vision` and some template engine.
     // Setting up hapi views
-    server.views( HapiConfig.views );
+    // Service.views( HapiConfig.views );
 
-    // registering server methods
-    server.method( Methods );
+    // registering Service methods
+    Service.method( Methods );
 
     // registering routes
-    server.route( Routes );
+    Service.route( Routes );
 
-    server.start( function () {
+    Service.start( function (err) {
+        if (err) {
+            Service.log('error', err);
+            throw err;
+        }
 
-        console.info( `HapiJS server running at ${server.info.uri} in ${process.env.NODE_ENV || 'development'} mode` );
+        Service.log( 'start', `HapiJS Service running at ${Service.info.uri} in ${process.env.NODE_ENV || 'development'} mode` );
     } );
 } );
 
@@ -48,4 +53,4 @@ server.register( Plugins, ( err ) => {
 //     }
 // );
 
-module.exports = server;
+module.exports = Service;

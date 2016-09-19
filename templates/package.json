@@ -9,7 +9,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "NODE_ENV=development node server/index.js",
-    "test": "lab -t 100",
+    "test": "lab -t 95",
     "test-cov-html": "lab -r html -o coverage.html"
   },
   "keywords": [
@@ -17,16 +17,18 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "eslint-config-hapi": "^9.1.0",
-    "lab": "^10.1.0",
+    "eslint-config-hapi": "^10.0.0",
+    "eslint-plugin-hapi": "^4.0.0",
+    "lab": "^11.0.0",
     "code": "^3.0.1"
   },
   "dependencies": {
     "blipp": "^2.3.0",
-    "boom": "^2.8.0",
-    "confidence": "^1.1.0",
-    "hapi": "^13.0.0",
-    "vision": "^3.0.0",
-    "handlebars": "^4.0.5"
+    "boom": "^4.0.0",
+    "confidence": "^3.0.0",
+    "hapi": "^15.0.x",
+    "good": "^7.0.2",
+    "good-console": "^6.1.2",
+    "good-squeeze": "^5.0.0"
   }
 }
