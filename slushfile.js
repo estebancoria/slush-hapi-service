@@ -18,6 +18,9 @@ const pathJoin = require(  'path' ).join,
     gutil = require( 'gulp-util' );
 
     function format( string ) {
+        if (!string){
+            return '';
+        }
         var username = string.toLowerCase();
         return username.replace( /\s/g, '' );
     }
