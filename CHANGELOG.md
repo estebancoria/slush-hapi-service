@@ -7,3 +7,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - :new: Improving logging support with good!
+
+### Fixed
+- :bug: if string is undefined return empty string (when checking username)

@@ -1,6 +1,6 @@
 {
   "name": "slush-hapi-service",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Slush generator for creating the foundation of a HapiJS (micro) service/webapp.",
   "main": "slushfile.js",
   "scripts": {
